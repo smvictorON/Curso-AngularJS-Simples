@@ -9,6 +9,7 @@
   "author": "Victor <victorsm9@hotmail.com>",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.8.2"
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.3"
   }
 }

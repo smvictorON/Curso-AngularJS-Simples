@@ -57,3 +57,7 @@ pesada para carregar.
 `var nomefunc = function(){}` ou `$scope.nomefunc = function(){}`
 da primeira forma ela só fica acessivel dentro do controller ja da
 segunda forma ela pode ser acessada dentro do html.
+
+- Não é recomendado usar métodos dentro de laços de repetição, uma das razões
+é que se tiver um campo de busca na lista do laço, ele vai executar o método
+todas as vezes que o campo de busca mudar
