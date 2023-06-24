@@ -24,7 +24,6 @@ angular.module("meuModulo")
     $scope.editando = false
     limpaForm()
     $('#modal1').modal('open')
-    // M.Modal.getInstance(document.getElementById('modal1')).open();
   }
 
   $scope.addAluno = function(aluno){
@@ -65,6 +64,7 @@ angular.module("meuModulo")
     $scope.aluno = {nome: "", email: "", nota1:"", nota2:"", nota3:"", media: ""}
   }
 
+  $('#modal1').modal();
   init()
 })
 
