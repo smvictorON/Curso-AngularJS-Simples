@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meuModulo">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body ng-controller="indexController">
+  <header class="container">
+    <h2 ng-bind="titulo"></h2>
+  </header>
+
+  <main class="container">
+    <div id="row">
+      <input type="search" placeholder="Busca" ng-model="busca">
+    </div>
+
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Nota1</th>
+          <th>Nota2</th>
+          <th>Nota3</th>
+          <th>Média</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="aluno in alunos | filter: busca">
+          <td ng-bind="aluno.nome"></td>
+          <td ng-bind="aluno.email">email.com</td>
+          <td ng-bind="aluno.nota1">1</td>
+          <td ng-bind="aluno.nota2">2</td>
+          <td ng-bind="aluno.nota3">3</td>
+          <td ng-bind="media(aluno)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript">
+    angular.module("meuModulo", [])
+    .controller("indexController", function($scope){
+      $scope.titulo = "Sistema com AngularJS"
+      $scope.alunos = [
+        {nome: "Victor", email: "victorsm9@hotmail.com", nota1:65, nota2:80, nota3:55},
+        {nome: "Pedro", email: "petro@hotmail.com", nota1:70, nota2:90, nota3:45},
+        {nome: "Murilo", email: "murilo@hotmail.com", nota1:60, nota2:80, nota3:40},
+        {nome: "Joao", email: "joao@hotmail.com", nota1:50, nota2:75, nota3:70}
+      ]
+
+      $scope.media = function(aluno) {
+        return ((aluno.nota1 + aluno.nota2 + aluno.nota3) / 3).toFixed(2)
+      }
+    })
+  </script>
+</body>
+</html>
