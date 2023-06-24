@@ -9,7 +9,7 @@ angular.module("meuModulo", ['ngRoute'])
     templateUrl: "templates/contato.html",
     controller: "contatoController"
   })
-  .otherwise({redirectTo: "/"});
+  .otherwise({redirectTo: "/home"});
 
   $locationProvider.html5Mode(true);
 })
